@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title>轩哥搜索引擎</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        
+
+        .container {
+
+            display: flex;
+
+            flex-direction: row;
+
+            justify-content: center;
+
+            align-items: flex-start;
+
+        }
+
+        
+
+        .sidebar {
+
+            width: 20%;
+
+            background-color: lightgray;
+
+            padding: 20px;
+
+        }
+
+        
+
+        .main-content {
+
+            width: 80%;
+
+            padding: 20px;
+
+        }
+
+        
+
+        h1 {
+
+            margin-top: 20px;
+
+        }
+
+        
+
+        .search-container {
+
+            margin-top: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+
+        }
+
+        
+
+        .search-container input[type=text] {
+
+            padding: 8px;
+
+            height: 40px;
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+            margin-bottom: 10px;
+
+        }
+
+        
+
+        .search-container select {
+
+            padding: 8px;
+
+            height: 40px;
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+            margin-bottom: 10px;
+
+        }
+
+        
+
+        .search-container button {
+
+            padding: 8px 16px;
+
+            height: 40px;
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            background-color: #007bff;
+
+            color: #fff;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+
+
+        <div class="main-content">
+
+            <h1>轩哥搜索引擎</h1>
+
+            
+
+            <div class="search-container">
+
+                <input type="text" id="search-input" placeholder="在这里输入搜索内容">
+
+                <select id="search-engine">
+
+
+                    <option value="https://bing.com/search?q=">Bing</option>
+
+                    <option value="https://yahoo.com/search?p=">Yahoo</option>
+
+                    <option value="https://m.sm.cn/s?q=">神马</option>
+
+                    <option value="https://m.so.com/s?q=">360</option>
+
+                    <option value="https://m.toutiao.com/search/?keyword=">头条</option>
+
+                    <option value="https://google.com/search?q=">Google</option>
+
+                    
+
+                </select>
+
+                <button onclick="search()">搜索</button>
+
+            </div>
+
+        </div>
+
+    </div>
+<p><a href="https://211611411.github.io" target="_blank" style="color:black;">轩哥软件合集</a></p>
+
+    
+
+    <script>
+
+        function search() {
+
+            var searchInput = document.getElementById("search-input");
+
+            var searchEngine = document.getElementById("search-engine").value;
+
+            var searchText = searchInput.value;
+
+            
+
+            window.location.href = searchEngine + searchText;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+
+        /* 按钮样式 */
+
+        .button {
+
+            display: inline-block;
+
+            background-color: #007bff; 
+
+            border: none;
+
+            color: white;
+
+            padding: 15px 32px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            display: inline-block;
+
+            font-size: 16px;
+
+            margin: 4px 2px;
+
+            cursor: pointer;
+
+            border-radius: 5px;
+
+        }
+
+ 
+
+        /* 蓝色按钮样式 */
+
+        .blue-button {
+
+            background-color: #FFFFFF; /* White */
+
+        }
+
+ 
+
+        /* 抽屉样式 */
+
+        .drawer {
+
+            display: none; /* 默认隐藏抽屉 */
+
+            position: fixed; /* 固定定位 */
+
+            bottom: 0; /* 在页面底部 */
+
+            width: 100%; /* 宽度全屏 */
+
+            background-color: #f1f1f1; /* 背景颜色 */
+
+            padding: 20px; /* 内边距 */
+
+            box-sizing: border-box; /* 盒子模型 */
+
+            transition: all 0.5s ease; /* 动画效果 */
+
+        }
+
+ 
+
+        /* 显示抽屉时的样式 */
+
+        .drawer.show {
+
+            display: block; /* 显示抽屉 */
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+ 
+
+    <!-- 按钮 -->
+
+    <button class="button blue-button" onclick="toggleDrawer()">
+
+      
+
+    </button>
+
+ 
+
+    <!-- 抽屉 -->
+
+    <div id="myDrawer" class="drawer">
+
+        <button class="button" onclick="window.location.href='https://www.so.com'">360</button>
+
+        <button class="button" onclick="window.location.href='https://www.chatglm.cn'">ChatGLM</button>
+
+        <button class="button" onclick="window.location.href='https://www.bilibili.com'">哔哩哔哩</button>
+<button class="button" onclick="window.location.href='https://sino.rth10.com'">LitberrY</button>
+
+
+    </div>
+
+ 
+
+    <!-- JavaScript 代码 -->
+
+    <script>
+
+        // 切换抽屉显示/隐藏的函数
+
+        function toggleDrawer() {
+
+            var drawer = document.getElementById("myDrawer");
+
+            if (drawer.style.display === "block") {
+
+                drawer.style.display = "none";
+
+            } else {
+
+                drawer.style.display = "block";
+
+            }
+
+        }
+
+    </script>
+
+ 
+
+</body>
+</html>
+
